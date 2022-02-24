@@ -1,0 +1,21 @@
+{% extends 'otus/base.html' %}
+
+{% block title %}
+Тестовый портал Otus
+{% endblock %}
+
+{% block content %}
+    <h1>Тестовый портал Otus</h1>
+
+{% if name_host %}
+	{% autoescape off %}
+<br>
+<br>
+        <h3>Запущен на хосте:</h3><br>
+		{{ name_host }}
+	{% endautoescape %}
+
+{% endif %}
+
+
+{% endblock %}
