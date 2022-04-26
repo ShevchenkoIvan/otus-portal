@@ -18,4 +18,15 @@
 {% endif %}
 
 
+    {% if secret %}
+	{% autoescape off %}
+<br>
+<br>
+        <h3>Секрет:</h3><br>
+		{{ secret }}
+	{% endautoescape %}
+
+{% endif %}
+
+
 {% endblock %}
