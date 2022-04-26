@@ -1,20 +1,22 @@
-version: '3.8'
+---
+version: "3.9"
+
 services:
-   web:
-       image: "IMAGE_DOCKER_PATH"
-       ports:
-           - "8000:8000"
-       deploy:
-           replicas: 1
-        placement:
-            max_replicas_per_node: 1
-        update_config:
-            parallelism: 1
-            delay: 10s
-            failure_action: rollback
-       secrets:
-           - source: test_secret.prop
-             target: "/app/test_secret.txt"
+  test-portal:
+    image: "ivsh/test-portal:1"
+    ports:
+      - "8000:8000"
+    deploy:
+      replicas: 1
+      placement:
+        max_replicas_per_node: 1
+      update_config:
+        parallelism: 1
+        delay: 10s
+        failure_action: rollback
+    secrets:
+      - source: test_secret.prop
+        target: "/app/test_secret.txt"
 
 secrets:
   test_secret.prop:
