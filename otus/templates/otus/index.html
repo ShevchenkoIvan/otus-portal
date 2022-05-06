@@ -29,4 +29,15 @@
 {% endif %}
 
 
+
+ {% if secret_env %}
+	{% autoescape off %}
+<br>
+<br>
+        <h3>Переменная секрет:</h3><br>
+		{{ secret_env }}
+	{% endautoescape %}
+
+{% endif %}
+
 {% endblock %}
