@@ -18,7 +18,7 @@
 {% endif %}
 
 
-    {% if secret %}
+{% if secret %}
 	{% autoescape off %}
 <br>
 <br>
@@ -30,7 +30,7 @@
 
 
 
- {% if secret_env %}
+{% if secret_env %}
 	{% autoescape off %}
 <br>
 <br>
@@ -39,5 +39,16 @@
 	{% endautoescape %}
 
 {% endif %}
+
+{% if config %}
+	{% autoescape off %}
+<br>
+<br>
+        <h3>Конфиг:</h3><br>
+		{{ config }}
+	{% endautoescape %}
+
+{% endif %}
+
 
 {% endblock %}
